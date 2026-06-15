@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-shadow: 1px 3px 0px rgba(0, 0, 0, 0.507);
+}
+
+#root {
+  font-family: minecraft, Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(/panorama.png);
+  background-size: cover;
+  min-height: calc(100vh - 4rem);
+}
+
+nav {
+  height: 4rem;
+  background: url(terra.webp);
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 2rem;
+  align-items: center;
+  gap: 1rem
+}
+
+.linkButton {
+  background-color: #6e6e6ebd;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 0.01rem;
+  width: 10rem;
+  height: 2rem;
+  transition: all 0.2s ease-in-out;
+  border: 2px outset #adadad;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.linkButton::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  left: -4px;
+  right: -4px;
+  background: rgb(255, 230, 230);
+  background-image: url(stonetexture.jpg);
+  border-radius: 0.01rem;
+  transform: translateZ(-1px);
+  transition: all 0.2s ease-in-out;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.linkButton:hover::before,
+.activeLink::before {
+  border-color: white;
+}
+
+.activeLink,
+.linkButton:hover {
+  background-color: #8485c8bd;
+  border-color: #b7bff9;
+}
+
+.activeLink:has(~.linkButton:hover),
+.linkButton:hover:has(~.activeLink)~.activeLink {
+  background-color: #6e6e6e;
+  border-color: #adadad;
+}
+
+.activeLink:has(~.linkButton:hover)::before,
+.linkButton:hover:has(~.activeLink)~.activeLink::before {
+  border-color: black;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding: 2.5rem 5rem;
+  color: rgb(24, 24, 24);
+  background-color: rgb(201, 201, 201);
+  border: 4px outset #f1f1f1;
+  border-radius: 0.33rem;
+
+  animation: spawn 1s;
+}
+
+.resume {
+  min-width: 25rem;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.pfp {
+  border: 4px inset #ffffff;
+}
+
+.learnMore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 12.5rem;
+  flex-direction: column;
+  border-radius: 0.01rem;
+  border: 1px solid rgba(255, 255, 255, 0.116);
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #8b8b8b;
+  border: 4px inset #cccccc;
+}
+
+.about {
+  width: 50%;
+  min-height: 75%;
+}
+
+.about h1 {
+  text-align: left;
+}
+
+.about p {
+  height: 12.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: #8b8b8b;
+  margin-top: 5rem;
+  border: 4px inset #aaaaaa;
+}
+
+@font-face {
+  font-family: minecraft;
+  src: url(/Minecraft-Seven_v2.woff2);
+}
+
+@keyframes spawn {
+  from {
+    transform: translateY(100vh);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}

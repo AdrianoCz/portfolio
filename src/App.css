@@ -1,20 +1,22 @@
 * {
   margin: 0;
   padding: 0;
-  text-shadow: 1px 3px 0px rgba(0, 0, 0, 0.507);
+  text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.507);
+  font-weight: normal;
 }
 
 #root {
   font-family: minecraft, Arial, Helvetica, sans-serif;
   min-height: 100vh;
   overflow: hidden;
+  background: url(/panorama.png);
+  animation: pan 30s linear alternate infinite;
 }
 
 main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(/panorama.png);
   background-size: cover;
   min-height: calc(100vh - 4rem);
 }
@@ -90,7 +92,7 @@ main {
 
 .container {
   padding: 2.5rem 5rem;
-  color: rgb(24, 24, 24);
+  color: rgb(41, 41, 41);
   background-color: rgb(201, 201, 201);
   border: 4px outset #f1f1f1;
   border-radius: 0.33rem;
@@ -123,7 +125,8 @@ main {
   padding: 1.5rem;
   text-align: center;
   background-color: #8b8b8b;
-  border: 4px inset #cccccc;
+  border: 4px inset #aaaaaa;
+  color: white;
 }
 
 .about {
@@ -144,6 +147,17 @@ main {
   background-color: #8b8b8b;
   margin-top: 5rem;
   border: 4px inset #aaaaaa;
+  color: white;
+}
+.portfolio{
+  flex-direction: column;
+  gap: 2rem;
+}
+.projectContainer{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  padding: 1rem 2rem;
 }
 
 @font-face {
@@ -160,5 +174,14 @@ main {
   to {
     transform: translateY(0%);
     opacity: 1;
+  }
+}
+@keyframes pan {
+  from {
+    background-position: left
+  }
+
+  to {
+    background-position: right
   }
 }

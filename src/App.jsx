@@ -31,6 +31,21 @@ function AboutMe(){
     </main>
   )
 }
+function Portfolio(){
+  const projects = [{name: "Minecraft website", desc: "My first actual project, kinda proud of this one", link: "https://adrianocz.github.io/minecraft-web-assignment/"},{name: "Runnow", desc: "App made for my friends' project", link:"https://adrianocz.github.io/runnow/"},{ name: "Etch a Sketch", desc:"Just a simple Etch a Sketch recreation", link:"https://adrianocz.github.io/etch-a-sketch/"}] 
+  return(
+    <main className='portfolio'>
+      {projects.map((project => 
+      <div className='container projectContainer'>
+        <div className="nameDesc">
+          <h2>{project.name}</h2>
+          <p>{project.desc}</p>
+        </div>
+        <a href={project.link} target='_blank' className="linkButton">Access</a>
+      </div>))}
+    </main>
+  )
+}
 function App() {
   const [count, setCount] = useState(0)
   const linkButtonStyle = ({ isActive }) => { isActive ? { backgroundColor: 'white', color: '#00a2ff' } : {} }
@@ -50,6 +65,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/about' element={<AboutMe />}></Route>
+        <Route path='/portfolio' element={<Portfolio/>}></Route>
       </Routes>
     </BrowserRouter>
   )

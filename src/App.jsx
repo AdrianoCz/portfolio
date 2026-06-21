@@ -50,7 +50,7 @@ function App() {
   const [count, setCount] = useState(0)
   const linkButtonStyle = ({ isActive }) => { isActive ? { backgroundColor: 'white', color: '#00a2ff' } : {} }
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/portfolio'>
       <nav>
         <NavLink to="/" className={({ isActive }) => isActive ? "linkButton activeLink" : "linkButton"}>
           Home

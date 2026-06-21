@@ -11,6 +11,8 @@
   overflow: hidden;
   background: url(/panorama.png);
   animation: pan 30s linear alternate infinite;
+  background-repeat: no-repeat;
+  background-size:cover;
 }
 
 main {
